@@ -1,0 +1,106 @@
+/* ==================== إعدادات عامة ==================== */
+:root {
+    /* تعريف لون العلامة التجارية الأساسي - لون شهي (برتقالي ذهبي) */
+    --primary-color: #ffc107; 
+    --dark-color: #212529;
+}
+
+body {
+    /* استخدام خط Cairo لجميع النصوص في الموقع */
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden; /* منع ظهور شريط تمرير أفقي */
+}
+
+/* تحسين مظهر الروابط */
+a {
+    text-decoration: none;
+}
+
+/* مسافات إضافية للسكاشن */
+.section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* ==================== Navbar تنسيقات شريط التنقل ==================== */
+.navbar {
+    /* إضافة تأثير ضبابي خلف الناف بار */
+    backdrop-filter: blur(10px);
+}
+.navbar .container .navbar-brand{
+    font-size: 2em;
+    color: var(--primary-color);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    transition: color 0.3s ease;
+    color: #ffd902;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* ==================== Header (Hero Section) تنسيقات القسم الرئيسي ==================== */
+.hero-section {
+    min-height: 100vh;
+    background-image: url(../images/Burger-BG.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* إضافة مسافة علوية لتعويض الناف بار المثبت */
+    margin-top: 70px;
+}
+
+/* إضافة طبقة داكنة فوق صورة الخلفية لجعل النص مقروءاً */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* لون أسود شفاف بنسبة 60% */
+    z-index: 1;
+}
+
+/* التأكد من أن محتوى النص يظهر فوق الطبقة الداكنة */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ==================== Menu Cards تنسيقات كروت المنيو ==================== */
+.menu-card {
+    transition: all 0.3s ease-in-out;
+}
+
+/* تأثير عند مرور الماوس على الكرت: يرتفع قليلاً ويزداد الظل */
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+}
+
+.menu-card img {
+    height: 250px; /* توحيد ارتفاع صور الكروت */
+    object-fit: cover; /* جعل الصورة تملأ المساحة دون تشويه */
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover img {
+    transform: scale(1.05); /* تكبير بسيط للصورة عند الهوفر */
+}
+
+/* ==================== تعديلات Bootstrap ==================== */
+/* جعل الأزرار الصفراء ذات نص داكن لتباين أفضل */
+.btn-warning {
+    color: var(--dark-color);
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
